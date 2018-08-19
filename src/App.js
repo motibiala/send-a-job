@@ -109,6 +109,12 @@ class App extends Component {
       var isExist = 0;
       var tmpList2 = [];
       tmpList2 = this.state.printList;
+
+      if(this.state.copyOfPrintList.length > 0){
+        this.setState({ printList: this.state.copyOfPrintList });
+        tmpList2 = this.state.copyOfPrintList;
+      }
+
       for(let i=0; i<tmpList2.length; i++){
         if(tmpList2[i].userName === n){
           if(tmpList2[i].month === d.month()+1 && tmpList2[i].year === d.year()){
@@ -152,13 +158,13 @@ class App extends Component {
           this.subFilters.push(tmplst[i].month + '/' + tmplst[i].year);
           break;
         case 'sum_hours':
-          this.subFilters.push(tmplst[i].sum_hours);
+          this.subFilters.push(tmplst[i].sum_hours.toString());
           break;
         case 'avg_per_day':
-          this.subFilters.push(tmplst[i].avg_per_day);
+          this.subFilters.push(tmplst[i].avg_per_day.toString());
           break;
         case 'sum_extra_hours':
-          this.subFilters.push(tmplst[i].sum_extra_hours);
+          this.subFilters.push(tmplst[i].sum_extra_hours.toString());
           break;
         default:
           break;
@@ -189,17 +195,17 @@ class App extends Component {
           }
           break;
         case 'Sum of Hours':
-          if(copyOfPrintList[i].sum_hours === this.state.subFilter) {
+          if(copyOfPrintList[i].sum_hours == this.state.subFilter.toString()) {
             tmplst.push(copyOfPrintList[i]);
           }
           break;
         case 'Average Hours Per Days':
-          if(copyOfPrintList[i].avg_per_day === this.state.subFilter) {
+          if(copyOfPrintList[i].avg_per_day == this.state.subFilter.toString()) {
             tmplst.push(copyOfPrintList[i]);
           }
           break;
         case 'Sum of Extra Hours':
-          if(copyOfPrintList[i].sum_extra_hours === this.state.subFilter) {
+          if(copyOfPrintList[i].sum_extra_hours == this.state.subFilter.toString()) {
             tmplst.push(copyOfPrintList[i]);
           }
           break;
