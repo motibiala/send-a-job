@@ -147,24 +147,60 @@ class App extends Component {
     this.subFilters = [];
     this.setState({ filter: col.label });
     this.setState({ subFiltersClass: 'visible' });
-    this.subFilters = [];
     
+    let isExist = 0;
+
     for(let i=0; i<tmplst.length; i++){
       switch(col.value){
         case 'userName':
-          this.subFilters.push(tmplst[i].userName);
+          for(let j=0; j<this.subFilters.length; j++){
+            if(this.subFilters[j] === tmplst[i].userName){
+              isExist++;
+            }
+          }
+          if(isExist === 0){
+            this.subFilters.push(tmplst[i].userName);
+          }
           break;
         case 'month':
-          this.subFilters.push(tmplst[i].month + '/' + tmplst[i].year);
+          for(let j=0; j<this.subFilters.length; j++){
+            if(this.subFilters[j] === tmplst[i].month + '/' + tmplst[i].year){
+              isExist++;
+            }
+          }
+          if(isExist === 0){
+            this.subFilters.push(tmplst[i].month + '/' + tmplst[i].year);
+          }
           break;
         case 'sum_hours':
-          this.subFilters.push(tmplst[i].sum_hours.toString());
+          for(let j=0; j<this.subFilters.length; j++){
+            if(this.subFilters[j] == tmplst[i].sum_hours.toString()){
+              isExist++;
+            }
+          }
+          if(isExist === 0){
+            this.subFilters.push(tmplst[i].sum_hours.toString());
+          }
           break;
         case 'avg_per_day':
-          this.subFilters.push(tmplst[i].avg_per_day.toString());
+          for(let j=0; j<this.subFilters.length; j++){
+            if(this.subFilters[j] == tmplst[i].avg_per_day.toString()){
+              isExist++;
+            }
+          }
+          if(isExist === 0){
+            this.subFilters.push(tmplst[i].avg_per_day.toString());
+          }
           break;
         case 'sum_extra_hours':
-          this.subFilters.push(tmplst[i].sum_extra_hours.toString());
+          for(let j=0; j<this.subFilters.length; j++){
+            if(this.subFilters[j] == tmplst[i].sum_extra_hours.toString()){
+              isExist++;
+            }
+          }
+          if(isExist === 0){
+            this.subFilters.push(tmplst[i].sum_extra_hours.toString());
+          }
           break;
         default:
           break;
