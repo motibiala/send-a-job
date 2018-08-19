@@ -91,6 +91,7 @@ button {
   display: inline-block;
   font-size: 14px;
   border-radius: 4px;
+  background: linear-gradient(to bottom, white, grey);
 }
 
 input[type=text], select {
