@@ -160,6 +160,8 @@ class App extends Component {
         case 'sum_extra_hours':
           this.subFilters.push(tmplst[i].sum_extra_hours);
           break;
+        default:
+          break;
       }
     }
   }
@@ -177,29 +179,31 @@ class App extends Component {
     for(let i=0; i<copyOfPrintList.length; i++){
       switch(this.state.filter) {
         case 'User Name':
-          if(copyOfPrintList[i].userName == this.state.subFilter) {
+          if(copyOfPrintList[i].userName === this.state.subFilter) {
             tmplst.push(copyOfPrintList[i]);
           }
           break;
         case 'Month':
-          if(copyOfPrintList[i].month + '/' + copyOfPrintList[i].year == this.state.subFilter) {
+          if(copyOfPrintList[i].month + '/' + copyOfPrintList[i].year === this.state.subFilter) {
             tmplst.push(copyOfPrintList[i]);
           }
           break;
         case 'Sum of Hours':
-          if(copyOfPrintList[i].sum_hours == this.state.subFilter) {
+          if(copyOfPrintList[i].sum_hours === this.state.subFilter) {
             tmplst.push(copyOfPrintList[i]);
           }
           break;
         case 'Average Hours Per Days':
-          if(copyOfPrintList[i].avg_per_day == this.state.subFilter) {
+          if(copyOfPrintList[i].avg_per_day === this.state.subFilter) {
             tmplst.push(copyOfPrintList[i]);
           }
           break;
         case 'Sum of Extra Hours':
-          if(copyOfPrintList[i].sum_extra_hours == this.state.subFilter) {
+          if(copyOfPrintList[i].sum_extra_hours === this.state.subFilter) {
             tmplst.push(copyOfPrintList[i]);
           }
+          break;
+        default:
           break;
       }
       this.setState({ printList: tmplst });
@@ -246,7 +250,7 @@ class App extends Component {
                 }
               }
               break;
-              case 'month':
+            case 'month':
               if(dir === 0){
                 if((tList[i].month > tList[j].month && tList[i].year === tList[j].year) || tList[i].year > tList[j].year){
                   this.setState({ tdMonth: 'up visible' });
@@ -259,7 +263,7 @@ class App extends Component {
                 }
               }
               break;
-              case 'sumHours':
+            case 'sumHours':
               if(dir === 0){
                 if(tList[i].sum_hours > tList[j].sum_hours){
                   this.setState({ tdSumHours: 'up visible' });
@@ -272,7 +276,7 @@ class App extends Component {
                 }
               }
               break;
-              case 'avg':
+            case 'avg':
               if(dir === 0){
                 if(tList[i].avg_per_day > tList[j].avg_per_day){
                   this.setState({ tdAvgPerDays: 'up visible' });
@@ -285,7 +289,7 @@ class App extends Component {
                 }
               }
               break;
-              case 'sumExtra':
+            case 'sumExtra':
               if(dir === 0){
                 if(tList[i].sum_extra_hours > tList[j].sum_extra_hours){
                   this.setState({ tdSumExtra: 'up visible' });
@@ -297,6 +301,8 @@ class App extends Component {
                   this.swap(tList[i], tList[j]);
                 }
               }
+              break;
+            default:
               break;
           }
         }
