@@ -1,0 +1,125 @@
+.App {
+  text-align: left;
+  width: 90%;
+  margin: auto;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+}
+
+h1{
+  color: rgb(0, 0, 70);
+}
+
+.dropDown {
+  width: 150px;
+}
+
+.error {
+  color: red;
+}
+
+.listFrame {
+  border-style : solid;
+  padding: 10px;
+  background: linear-gradient(to bottom right, rgb(0, 0, 70), rgb(28, 181, 224));
+}
+
+.records {
+  text-align: left;
+  margin-top: 25px;
+  border-style : solid;
+  padding: 10px;
+  background: linear-gradient(to bottom right, rgb(0, 0, 70), rgb(28, 181, 224));
+}
+
+.left {
+  float: left;
+}
+
+.recTable{
+  margin-top: 10px;
+  background-color: grey;
+  padding: 2px;
+  border-spacing: 2px;
+  color: black;
+}
+
+.recTd {
+  background-color: white;
+  padding: 3px;
+  text-align: center;
+  min-width: 200px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: block;
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+i {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.filterTd {
+  width: 260px;
+}
+
+button {
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 10px 10px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.magnifying-glass {
+  display: block;
+  text-indent: -9999px;
+  width: 20px;
+  height: 14px;
+  background: url(magnifying-glass.svg);
+  background-size: 20px 14px;
+}
+
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
